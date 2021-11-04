@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c9426dfffbf64b5692526f917327c67d" Name="Diagram1" ZoomLevel="124">
+        <EntityTypeShape EntityType="ContratoMantenimientoModel.BehaviorHidraulic" Width="2.125" PointX="0.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContratoMantenimientoModel.BehaviorInstrumentation" Width="2.125" PointX="2.125" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContratoMantenimientoModel.SitesMtto" Width="1.75" PointX="6.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContratoMantenimientoModel.TaskSuppliesUsed" Width="1.75" PointX="2.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContratoMantenimientoModel.TechnicalServices" Width="1.75" PointX="4.625" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContratoMantenimientoModel.Tickets" Width="1.5" PointX="0.5" PointY="2.875" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

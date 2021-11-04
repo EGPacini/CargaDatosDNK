@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ContratoMantenimientoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BehaviorHidraulic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="siteIDDatagate" Type="nvarchar" MaxLength="255" />
+          <Property Name="datetime" Type="datetime" />
+          <Property Name="ch1Value" Type="float" />
+          <Property Name="ch2Value" Type="float" />
+          <Property Name="ch3Value" Type="float" />
+        </EntityType>
+        <EntityType Name="BehaviorInstrumentation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="siteIDDatagate" Type="nvarchar" MaxLength="255" />
+          <Property Name="datetime" Type="datetime" />
+          <Property Name="csq" Type="int" />
+          <Property Name="battery" Type="float" />
+          <Property Name="lastCallIn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SitesMtto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="siteIDDatagate" Type="nvarchar" MaxLength="255" />
+          <Property Name="idFieldBeat" Type="nvarchar" MaxLength="255" />
+          <Property Name="addressDatagate" Type="nvarchar" MaxLength="255" />
+          <Property Name="createDateDatagate" Type="datetime" />
+          <Property Name="typeDevice" Type="nvarchar" MaxLength="255" />
+          <Property Name="latitudeSite" Type="float" />
+          <Property Name="longitudeSite" Type="float" />
+          <Property Name="MeasuresDevice" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="TaskSuppliesUsed">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idFieldbeat" Type="nvarchar" MaxLength="255" />
+          <Property Name="idTaskFieldbeat" Type="nvarchar" MaxLength="255" />
+          <Property Name="datetimeTask" Type="datetime" />
+          <Property Name="suppliesUsed" Type="nvarchar" MaxLength="255" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="TaskType" Type="varchar" MaxLength="25" />
+          <Property Name="currentStatus" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TechnicalServices">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datetimeIn" Type="datetime" />
+          <Property Name="datetimeOut" Type="datetime" />
+          <Property Name="serviceReference" Type="nvarchar" MaxLength="255" />
+          <Property Name="suppliesUsed" Type="nvarchar" MaxLength="255" />
+          <Property Name="diagnosticDevice" Type="nvarchar" MaxLength="255" />
+          <Property Name="idFieldBeat" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Tickets">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ticketNumber" Type="int" />
+          <Property Name="createDate" Type="datetime" />
+          <Property Name="siteIDDatagate" Type="nvarchar" MaxLength="255" />
+          <Property Name="currentStatus" Type="nvarchar" MaxLength="255" />
+          <Property Name="teamAssigned" Type="nvarchar" MaxLength="255" />
+          <Property Name="closedDateDG" Type="datetime" />
+          <Property Name="lastUpdated" Type="datetime" />
+          <Property Name="SLAPlan" Type="varchar" MaxLength="25" />
+          <Property Name="Overdue" Type="varchar" MaxLength="5" />
+          <Property Name="tipoEvento" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityContainer Name="ContratoMantenimientoModelStoreContainer">
+          <EntitySet Name="BehaviorHidraulic" EntityType="Self.BehaviorHidraulic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BehaviorInstrumentation" EntityType="Self.BehaviorInstrumentation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SitesMtto" EntityType="Self.SitesMtto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskSuppliesUsed" EntityType="Self.TaskSuppliesUsed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechnicalServices" EntityType="Self.TechnicalServices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ContratoMantenimientoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BehaviorHidraulic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="siteIDDatagate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="datetime" Type="DateTime" Precision="3" />
+          <Property Name="ch1Value" Type="Double" />
+          <Property Name="ch2Value" Type="Double" />
+          <Property Name="ch3Value" Type="Double" />
+        </EntityType>
+        <EntityType Name="BehaviorInstrumentation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="siteIDDatagate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="datetime" Type="DateTime" Precision="3" />
+          <Property Name="csq" Type="Int32" />
+          <Property Name="battery" Type="Double" />
+          <Property Name="lastCallIn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SitesMtto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="siteIDDatagate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="idFieldBeat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="addressDatagate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="createDateDatagate" Type="DateTime" Precision="3" />
+          <Property Name="typeDevice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="latitudeSite" Type="Double" />
+          <Property Name="longitudeSite" Type="Double" />
+          <Property Name="MeasuresDevice" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TaskSuppliesUsed">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFieldbeat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="idTaskFieldbeat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="datetimeTask" Type="DateTime" Precision="3" />
+          <Property Name="suppliesUsed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="TaskType" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="currentStatus" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TechnicalServices">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datetimeIn" Type="DateTime" Precision="3" />
+          <Property Name="datetimeOut" Type="DateTime" Precision="3" />
+          <Property Name="serviceReference" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="suppliesUsed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="diagnosticDevice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="idFieldBeat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tickets">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ticketNumber" Type="Int32" />
+          <Property Name="createDate" Type="DateTime" Precision="3" />
+          <Property Name="siteIDDatagate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="currentStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="teamAssigned" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="closedDateDG" Type="DateTime" Precision="3" />
+          <Property Name="lastUpdated" Type="DateTime" Precision="3" />
+          <Property Name="SLAPlan" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Overdue" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="tipoEvento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ContratoMantenimientoEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BehaviorHidraulic" EntityType="Self.BehaviorHidraulic" />
+          <EntitySet Name="BehaviorInstrumentation" EntityType="Self.BehaviorInstrumentation" />
+          <EntitySet Name="SitesMtto" EntityType="Self.SitesMtto" />
+          <EntitySet Name="TaskSuppliesUsed" EntityType="Self.TaskSuppliesUsed" />
+          <EntitySet Name="TechnicalServices" EntityType="Self.TechnicalServices" />
+          <EntitySet Name="Tickets" EntityType="Self.Tickets" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ContratoMantenimientoModelStoreContainer" CdmEntityContainer="ContratoMantenimientoEntities1">
+    <EntitySetMapping Name="BehaviorHidraulic">
+      <EntityTypeMapping TypeName="IsTypeOf(ContratoMantenimientoModel.BehaviorHidraulic)">
+        <MappingFragment StoreEntitySet="BehaviorHidraulic">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteIDDatagate" ColumnName="siteIDDatagate" />
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="ch1Value" ColumnName="ch1Value" />
+          <ScalarProperty Name="ch2Value" ColumnName="ch2Value" />
+          <ScalarProperty Name="ch3Value" ColumnName="ch3Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BehaviorInstrumentation">
+      <EntityTypeMapping TypeName="IsTypeOf(ContratoMantenimientoModel.BehaviorInstrumentation)">
+        <MappingFragment StoreEntitySet="BehaviorInstrumentation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteIDDatagate" ColumnName="siteIDDatagate" />
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="csq" ColumnName="csq" />
+          <ScalarProperty Name="battery" ColumnName="battery" />
+          <ScalarProperty Name="lastCallIn" ColumnName="lastCallIn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SitesMtto">
+      <EntityTypeMapping TypeName="IsTypeOf(ContratoMantenimientoModel.SitesMtto)">
+        <MappingFragment StoreEntitySet="SitesMtto">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siteIDDatagate" ColumnName="siteIDDatagate" />
+          <ScalarProperty Name="idFieldBeat" ColumnName="idFieldBeat" />
+          <ScalarProperty Name="addressDatagate" ColumnName="addressDatagate" />
+          <ScalarProperty Name="createDateDatagate" ColumnName="createDateDatagate" />
+          <ScalarProperty Name="typeDevice" ColumnName="typeDevice" />
+          <ScalarProperty Name="latitudeSite" ColumnName="latitudeSite" />
+          <ScalarProperty Name="longitudeSite" ColumnName="longitudeSite" />
+          <ScalarProperty Name="MeasuresDevice" ColumnName="MeasuresDevice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskSuppliesUsed">
+      <EntityTypeMapping TypeName="IsTypeOf(ContratoMantenimientoModel.TaskSuppliesUsed)">
+        <MappingFragment StoreEntitySet="TaskSuppliesUsed">
+          <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
+                <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idFieldbeat" ColumnName="idFieldbeat" />
+          <ScalarProperty Name="idTaskFieldbeat" ColumnName="idTaskFieldbeat" />
+          <ScalarProperty Name="datetimeTask" ColumnName="datetimeTask" />
+          <ScalarProperty Name="suppliesUsed" ColumnName="suppliesUsed" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechnicalServices">
+      <EntityTypeMapping TypeName="IsTypeOf(ContratoMantenimientoModel.TechnicalServices)">
+        <MappingFragment StoreEntitySet="TechnicalServices">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="datetimeIn" ColumnName="datetimeIn" />
+          <ScalarProperty Name="datetimeOut" ColumnName="datetimeOut" />
+          <ScalarProperty Name="serviceReference" ColumnName="serviceReference" />
+          <ScalarProperty Name="suppliesUsed" ColumnName="suppliesUsed" />
+          <ScalarProperty Name="diagnosticDevice" ColumnName="diagnosticDevice" />
+          <ScalarProperty Name="idFieldBeat" ColumnName="idFieldBeat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="IsTypeOf(ContratoMantenimientoModel.Tickets)">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ticketNumber" ColumnName="ticketNumber" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="siteIDDatagate" ColumnName="siteIDDatagate" />
+          <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
+          <ScalarProperty Name="teamAssigned" ColumnName="teamAssigned" />
+          <ScalarProperty Name="closedDateDG" ColumnName="closedDateDG" />
+          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
+          <ScalarProperty Name="SLAPlan" ColumnName="SLAPlan" />
+          <ScalarProperty Name="Overdue" ColumnName="Overdue" />
+          <ScalarProperty Name="tipoEvento" ColumnName="tipoEvento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
