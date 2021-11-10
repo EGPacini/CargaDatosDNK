@@ -41,6 +41,17 @@
           <Property Name="longitudeSite" Type="float" />
           <Property Name="MeasuresDevice" Type="varchar" MaxLength="40" />
         </EntityType>
+        <EntityType Name="TareasPreventivas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cliente" Type="nvarchar" MaxLength="40" />
+          <Property Name="sucursal" Type="nvarchar" MaxLength="70" />
+          <Property Name="tasktype" Type="nvarchar" MaxLength="40" />
+          <Property Name="createdate" Type="datetime" />
+          <Property Name="currentstatus" Type="nvarchar" MaxLength="40" />
+        </EntityType>
         <EntityType Name="TaskSuppliesUsed">
           <Key>
             <PropertyRef Name="id" />
@@ -86,6 +97,7 @@
           <EntitySet Name="BehaviorHidraulic" EntityType="Self.BehaviorHidraulic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BehaviorInstrumentation" EntityType="Self.BehaviorInstrumentation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SitesMtto" EntityType="Self.SitesMtto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TareasPreventivas" EntityType="Self.TareasPreventivas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaskSuppliesUsed" EntityType="Self.TaskSuppliesUsed" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TechnicalServices" EntityType="Self.TechnicalServices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
@@ -178,7 +190,19 @@
           <EntitySet Name="TaskSuppliesUsed" EntityType="Self.TaskSuppliesUsed" />
           <EntitySet Name="TechnicalServices" EntityType="Self.TechnicalServices" />
           <EntitySet Name="Tickets" EntityType="Self.Tickets" />
+          <EntitySet Name="TareasPreventivas" EntityType="ContratoMantenimientoModel.TareasPreventivas" />
         </EntityContainer>
+        <EntityType Name="TareasPreventivas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="cliente" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="sucursal" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="tasktype" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="createdate" Type="DateTime" Precision="3" />
+          <Property Name="currentstatus" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -227,14 +251,14 @@
     <EntitySetMapping Name="TaskSuppliesUsed">
       <EntityTypeMapping TypeName="IsTypeOf(ContratoMantenimientoModel.TaskSuppliesUsed)">
         <MappingFragment StoreEntitySet="TaskSuppliesUsed">
-          <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
-                <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="idFieldbeat" ColumnName="idFieldbeat" />
           <ScalarProperty Name="idTaskFieldbeat" ColumnName="idTaskFieldbeat" />
           <ScalarProperty Name="datetimeTask" ColumnName="datetimeTask" />
           <ScalarProperty Name="suppliesUsed" ColumnName="suppliesUsed" />
           <ScalarProperty Name="quantity" ColumnName="quantity" />
           <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+          <ScalarProperty Name="currentStatus" ColumnName="currentStatus" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -265,6 +289,18 @@
           <ScalarProperty Name="SLAPlan" ColumnName="SLAPlan" />
           <ScalarProperty Name="Overdue" ColumnName="Overdue" />
           <ScalarProperty Name="tipoEvento" ColumnName="tipoEvento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TareasPreventivas">
+      <EntityTypeMapping TypeName="IsTypeOf(ContratoMantenimientoModel.TareasPreventivas)">
+        <MappingFragment StoreEntitySet="TareasPreventivas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cliente" ColumnName="cliente" />
+          <ScalarProperty Name="sucursal" ColumnName="sucursal" />
+          <ScalarProperty Name="tasktype" ColumnName="tasktype" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="currentstatus" ColumnName="currentstatus" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

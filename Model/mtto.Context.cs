@@ -31,5 +31,6 @@ namespace WindowsFormsApp1.Model
         public virtual DbSet<TaskSuppliesUsed> TaskSuppliesUsed { get; set; }
         public virtual DbSet<TechnicalServices> TechnicalServices { get; set; }
         public virtual DbSet<Tickets> Tickets { get; set; }
+        public virtual DbSet<TareasPreventivas> TareasPreventivas { get; set; }
     }
 }

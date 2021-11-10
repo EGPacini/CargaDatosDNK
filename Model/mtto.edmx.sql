@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/03/2021 15:27:44
+-- Date Created: 11/04/2021 12:49:01
 -- Generated from EDMX file: C:\Users\DNK Water\source\repos\WindowsFormsApp1\Model\mtto.edmx
 -- --------------------------------------------------
 
@@ -39,6 +39,9 @@ IF OBJECT_ID(N'[dbo].[TechnicalServices]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Tickets]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Tickets];
+GO
+IF OBJECT_ID(N'[dbo].[TareasPreventivas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TareasPreventivas];
 GO
 
 -- --------------------------------------------------
@@ -89,7 +92,8 @@ CREATE TABLE [dbo].[TaskSuppliesUsed] (
     [datetimeTask] datetime  NULL,
     [suppliesUsed] nvarchar(255)  NULL,
     [quantity] int  NULL,
-    [TaskType] varchar(25)  NULL
+    [TaskType] varchar(25)  NULL,
+    [currentStatus] varchar(30)  NULL
 );
 GO
 
@@ -118,6 +122,17 @@ CREATE TABLE [dbo].[Tickets] (
     [SLAPlan] varchar(25)  NULL,
     [Overdue] varchar(5)  NULL,
     [tipoEvento] varchar(25)  NULL
+);
+GO
+
+-- Creating table 'TareasPreventivas'
+CREATE TABLE [dbo].[TareasPreventivas] (
+    [id] int IDENTITY(1,1) NOT NULL,
+    [cliente] varchar(30)  NULL,
+    [sucursal] varchar(30)  NULL,
+    [tasktype] varchar(30)  NULL,
+    [createdate] datetime  NULL,
+    [currentstatus] varchar(30)  NULL
 );
 GO
 
@@ -158,6 +173,12 @@ GO
 -- Creating primary key on [id] in table 'Tickets'
 ALTER TABLE [dbo].[Tickets]
 ADD CONSTRAINT [PK_Tickets]
+    PRIMARY KEY CLUSTERED ([id] ASC);
+GO
+
+-- Creating primary key on [id] in table 'TareasPreventivas'
+ALTER TABLE [dbo].[TareasPreventivas]
+ADD CONSTRAINT [PK_TareasPreventivas]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 

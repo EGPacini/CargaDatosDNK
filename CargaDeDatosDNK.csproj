@@ -44,9 +44,26 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.6.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +73,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -64,11 +82,337 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="hwmdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hwmdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AbortCodeLookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AccessTechnologyTypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AccountLeakOptions.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\accounts.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AccountTypeLookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ActuationsPegasus.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\alarmconditions.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\alarmforwarding.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\alarms.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\alarmTypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\APIQuotas.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ApplicationConfigLog.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ApplicationLookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ApplicationSettings.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\associations.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ATSInfoTable.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\audit.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BandPassFilter.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\BehaviorHidraulic.cs">
       <DependentUpon>mtto.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\BehaviorInstrumentation.cs">
       <DependentUpon>mtto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CategoryofPermitCodeLookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\celltable.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChamberTypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\channels.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChannelTypeChartOptions.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChannelTypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\correlationAccountMeta.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\correlationPath.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CorrelationResults.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\correlationTestPaths.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CountyCodes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\C__MigrationLog.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dataexport.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\datapoints.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DatFileLocations.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DatFiles.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DeviceSummary.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\exportindex.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FavouriteSignalList.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FavouriteSignalListData.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\firmwareupdates.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fleetreportoptions.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\flowpegasus.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\gascalorificvalues.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\gaszone.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GDImportDataFileLog.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GDImportDataFiles.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetalerts.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetalertTypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetaudit.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetchannelTypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetcustomers.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNethubs.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetlocations.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetmessages.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetmonthlyReport.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetsites.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNettransmitterChannels.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNettransmitterData.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNettransmitterFlushEvents.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNettransmitterFlushSettings.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNettransmitterLocations.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNettransmitters.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNettransmitterTemperatureSettings.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNettransmitterTypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetuserRoles.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetusers.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GNetuserSites.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\histograms.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\hubs.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\hwmdb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hwmdb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\hwmdb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\hwmdb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hwmdb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InstallationReport.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\installsite.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InvestigationAuth.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\leakconfirmation.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\leakconfirmationassociation.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LeakDetectionOptions.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\leakstatuslookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\lnstable.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LoggerAccessTechnology.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LoggerCommandHistory.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\loggerconfigurationdata.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LoggerFilterConfiguration.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LoggerLevelAndSpread.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\loggermeterreadings.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\loggerRecordingAudit.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\loggerrecordings.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\loggers.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\loggersecuretypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LoggerTypeIdentification.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\lookuptables.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Maintenance.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceInstallation.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceInstallationReportStatus.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceInstallationType.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceJob.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceJobSitePhoto.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceJobStatus.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceJobStatusComment.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceJobType.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceReports.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaintenanceReportsServerStatus.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Measurements.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\messageindex.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\messages.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\mtto.Context.cs">
       <AutoGen>True</AutoGen>
@@ -85,7 +429,184 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mtto.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\networklookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGFileExportLog.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGFileExportSchedule.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGFileRejectResponse.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGFileSequence.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGJobOutcome.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGJobType.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGOutcomeReason.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGRequest.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGSitePhoto.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGSiteVisit.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGSiteVisitComment.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGSiteVisitStockItems.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGStatus.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGStockItems.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NGTransactionStatus.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\openchannelconversion.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\openchannelheader.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PipeDiameterRanges.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PipeMappingFromGIS.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PipeMaterialTypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PipeNetwork.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PipeSize.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pmzbigtimedata.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pmzmessagelog.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pmzoffstimedata.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pmzpressflowdata.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pmzpresstimedata.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pmzsettings.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Predictive.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PredictiveAlarmSetting.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Predictive_AlarmCount.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Predictive_Audit.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RaisedAsLookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\recentsites.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\recordingspoints.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RepairedAsLookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\roles.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RTLTransmitters.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ScheduledReportLookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ShapeFileIconConfiguration.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ShapeFiles.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SiteCoordinates.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SiteLeakStatusHistory.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SiteLeakThresholdHistory.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SiteLoggerUserActions.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sitephotos.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sites.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\SitesMtto.cs">
+      <DependentUpon>mtto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SMSFailures.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\smsjobtable.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\smsrequesttable.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\softwarelookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SoundVelocityLookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\statuspegasus.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\steptestcredits.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\steptesthistory.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Survey.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SystemNotification.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TareasPreventivas.cs">
       <DependentUpon>mtto.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TaskSuppliesUsed.cs">
@@ -94,8 +615,56 @@
     <Compile Include="Model\TechnicalServices.cs">
       <DependentUpon>mtto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\tempchannels.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tempsiteList.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Tickets.cs">
       <DependentUpon>mtto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\timepegasus.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TMAOptions.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\torancounts.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\unitslookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserChannelChartTypes.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserNotificationAcknowledgement.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\userpasswords.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\users.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserUnitLookup.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\user_device.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\witsendpoints.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\witssitedetails.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WorkOrderLeakConfAssociation.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WWAlarmSettingsTable.cs">
+      <DependentUpon>hwmdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +684,25 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>mtto.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App1.config" />
+    <None Include="hwmdbDataSet.xsc">
+      <DependentUpon>hwmdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hwmdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hwmdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hwmdbDataSet.xss">
+      <DependentUpon>hwmdbDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model\hwmdb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>hwmdb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\hwmdb.edmx.diagram">
+      <DependentUpon>hwmdb.edmx</DependentUpon>
+    </None>
     <None Include="Model\mtto.edmx.diagram">
       <DependentUpon>mtto.edmx</DependentUpon>
     </None>
@@ -165,6 +753,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model\hwmdb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>hwmdb.edmx</DependentUpon>
+      <LastGenOutput>hwmdb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\hwmdb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>hwmdb.edmx</DependentUpon>
+      <LastGenOutput>hwmdb.cs</LastGenOutput>
+    </Content>
     <Content Include="Model\mtto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>mtto.edmx</DependentUpon>
